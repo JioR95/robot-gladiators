@@ -5,14 +5,14 @@ var playerAttack = 10;
 var playerMoney = 10;
 
 // You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
+console.log("apple", + i, playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 // fight function
-var fight = function() {
+var fight = function(enemyName) {
   // Alert players that they are starting the round
   window.alert("Welcome to Robot Gladiators!");
 
@@ -23,7 +23,7 @@ var fight = function() {
   if (promptFight === "fight" || promptFight === "FIGHT") {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
-    console.log(
+    console.log("apple", + i,
       playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
 
@@ -36,7 +36,7 @@ var fight = function() {
 
     // remove players's health by subtracting the amount set in the enemyAttack variable
     playerHealth = playerHealth - enemyAttack;
-    console.log(
+    console.log("apple", + i,
       enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
 
@@ -59,7 +59,7 @@ var fight = function() {
     }
     // if no (false), ask question again by running fight() again
     else {
-      fight();
+      fight(); 
     }
     // if player did not chose 1 or 2 in prompt
   } else {
@@ -69,3 +69,7 @@ var fight = function() {
 
 // run fight function to start game
 fight();
+
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+  }
